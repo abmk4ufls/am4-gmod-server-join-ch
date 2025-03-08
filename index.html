@@ -27,7 +27,8 @@
             flex-direction: column;
             position: relative;
             overflow: hidden;
-            background: black;
+            /* background: black; */
+            background: url('background.jpg') no-repeat center center/cover;
         }
 
         /* 🔥 تحسين العنوان */
@@ -94,7 +95,7 @@
             flex-direction: column;
             align-items: center;
             z-index: 3;
-            transform: translate(0%, 60%);
+            transform: translate(0%, 30%);
             background: rgba(0, 0, 0, 0.8);
             color: white;
             padding: 10px 40px;
@@ -113,6 +114,40 @@
         .visible {
             opacity: 1;
             visibility: visible;
+        }
+        
+        /* 📌 تصميم صورة المصغرة كزر */
+        .profile-box {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            display: flex;
+            align-items: center;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 15px;
+            box-shadow: 0px 0px 10px var(--glow-color);
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .profile-box:hover {
+            transform: scale(1.1);
+            box-shadow: 0px 0px 20px var(--glow-color);
+        }
+
+        .profile-box img {
+            width: 50px;
+            height: 50px;
+            border-radius: 30%;
+            margin-right: 10px;
+            border: 2px solid var(--glow-color);
+        }
+
+        .profile-name {
+            font-size: 18px;
+            font-weight: bold;
+            color: var(--text-color);
         }
 
     </style>
@@ -134,8 +169,20 @@
     
     <!-- 📢 رسالة التحميل -->
     <div id="loading-message" class="loading-message">
-        正在自动加入服务器...<br>
-        <small>如果没有重定向，请点击“重定向加入”按钮。</small>
+        正在自动加入服务器。。。<br>
+         <br>
+        <small>如果出现确认信息，请接受以完成指导过程。。</small>
+         <br>
+        如果没有重定向，请点击“重定向加入”按钮。<br>
+    </div>
+    
+    <!-- 👤 صورة المستخدم (زر يفتح رابط عند الضغط عليه) -->
+    <div class="profile-box" onclick="window.location.href='https://steamcommunity.com/id/AhmedMake400';">
+        <img src="ava_am4.jpg" alt="Profile Picture"> <!-- استبدل بـ الصورة الخاصة بك -->
+        <div class="profile-name">
+        AhmedMake400<br>
+        <small>> Steam</small>
+        </div>
     </div>
     
     <script>
